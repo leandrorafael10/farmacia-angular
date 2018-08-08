@@ -1,0 +1,23 @@
+<br/>
+<label>Name: </label>
+<input type="text" [(ngModel)]="task.nome">
+<br/>
+<label>Value: </label>
+<input type="text" [(ngModel)]="task.valor">
+<br/>
+<label>Data: </label>
+<input type="text" [(ngModel)]="task.date">
+<br/>
+<br/>
+<button type="button" (click)="add()"> Adicionar</button>
+<ul>
+  <li 
+  *ngFor="let item of list"
+   [innerHtml]="item.nome+ ' - ' +(item.valor|formatMoeda)+' - '+(item.date|formatData)"
+   [myTask]="item"
+   >
+     
+  </li>
+</ul>
+
+<p appMy></p>
